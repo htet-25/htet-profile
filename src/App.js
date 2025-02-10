@@ -4,6 +4,14 @@ import { FaLinkedin, FaGithub, FaYoutube, FaEnvelope } from "react-icons/fa";
 import profilePic from "./profile.jpeg"; // Import user photo
 
 export default function ProfileWebsite() {
+  React.useEffect(() => {
+    document.title = "Htet Naing - Portfolio"; // Change tab title
+    const favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.href = "./favicon.ico"; // Change favicon
+    document.head.appendChild(favicon);
+  }, []);
+
   return (
     <div className="container">
       <header className="header">
