@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";  // Import CSS file
 import { FaLinkedin, FaGithub, FaYoutube, FaEnvelope } from "react-icons/fa";
 import profilePic from "./profile.jpeg"; // Import user photo
@@ -12,6 +12,8 @@ export default function ProfileWebsite() {
     document.head.appendChild(favicon);
   }, []);
 
+  const [activeTab, setActiveTab] = useState("profile");
+
   return (
     <div className="container">
       <header className="header">
@@ -20,6 +22,13 @@ export default function ProfileWebsite() {
         <p>Java Full-Stack Developer</p>
       </header>
 
+      <div className="tabs">
+      <button className={`tab ${activeTab === "profile" ? "active" : ""}`} onClick={() => setActiveTab("profile")}>Profile</button>
+      <button className={`tab ${activeTab === "projects" ? "active" : ""}`} onClick={() => setActiveTab("projects")}>Projects</button>
+      </div>
+
+      {activeTab === "profile" && (
+        <>
       <section className="card about">
         <h2>About Me</h2>
         <p>
@@ -91,6 +100,61 @@ export default function ProfileWebsite() {
           </ul>
         </div>
       </section>
+
+      <section className="card education">
+      <h2>Education</h2>
+      <div className="education">
+        <h3>Post-Graduate Certificate in Web Development</h3> 
+        <p>Conestoga College, Kitchener, ON (September 2021 – December 2022)</p>
+      </div>
+      <div className="education">
+        <h3>Bachelor of Computer Science (Hons)</h3> 
+        <p>University of Computer Studies Yangon (December 2008 – November 2012)</p>
+        <a href="https://badges.wes.org/Evidence?i=fabb66be-f994-4498-b924-a69a2881779a&type=ca">Verify Here</a>
+      </div>
+      <div className="education">
+        <h3>AWS Certified Developer - Associate</h3> 
+        <a href="https://www.credly.com/badges/b1e265e0-2d30-475f-b9e7-bed14b0f38af/linked_in?t=sl5kce">Verify Here</a>
+      </div>
+      </section>
+      </>
+      )}
+
+{activeTab === "projects" && (
+      <section className="card projects">
+        <h2>Projects</h2>
+        <div className="project">
+          <h3>Enterprise Imaging System</h3>
+          <p>The Enterprise Imaging Project was designed to enhance and modernize AGFA’s imaging solutions for healthcare providers. The project aimed to improve efficiency, scalability, and performance by extending the existing system with new functionalities, optimizing workflows, and ensuring seamless data management for medical imaging and patient records.</p>
+          <p><span className="tech"><b>Technologies</b></span>: Java 17, Spring Boot, AngularJS, NgRx, RxJs, Redux, Oracle Database, Jenkins, JUnit, Mockito, Jest, Playwright</p>
+        </div>
+        <div className="project">
+          <h3>Hepatitis B & C Patient Data System</h3>
+          <p>The Hepatitis B & C Patient Data System was developed to enhance healthcare accessibility, patient tracking, and medical record management for over 100 healthcare providers. The project included a web-based system and an Android mobile application, allowing real-time data entry, monitoring, and reporting to improve disease control and treatment tracking.</p>
+          <p><span className="tech"><b>Technologies</b></span>: Java, JSF, MySQL, XHTML, AWS, Microservices Architecture, Highcharts,Spring Boot, Spring Security, Android (Java), REST APIs</p>
+          <div className="video-frame">
+            <h4>Hepatitis B & C Patient Data Dashboard Demo</h4>
+            <iframe title="Hepatitis B & C Patient Data Dashboard" width="100%" height="315" src="https://www.youtube.com/embed/T9yp3FRHfZI" style={{ border: "none" }} allowFullScreen></iframe>
+          </div>
+          <div className="video-frame">
+            <h4>Patient Data Collection Application Demo</h4>
+            <iframe title="Patient Data Collection Application" width="100%" height="315" src="https://www.youtube.com/embed/T9yp3FRHfZI" style={{ border: "none" }} allowFullScreen></iframe>
+          </div>
+        </div>
+        <div className="project">
+          <h3>Field data collection system for Education Sector</h3>
+          <p>Save the Children required a field data collection system to streamline operations for community outreach programs. The project involved developing a real-time web-based admin dashboard and an Android mobile application for field workers to capture, manage, and analyze child welfare data efficiently.</p>
+          <p><span className="tech"><b>Technologies</b></span>: Java, Spring Boot, Spring Security, MySQL, RESTful APIs, Android (Java/Kotlin), Highcharts, Digital Ocean</p>
+        </div>
+        <div className="project">
+          <h3>CRM & HRM System</h3>
+          <p>Myanmar Information Technology developed customized CRM (Customer Relationship Management) and HRM (Human Resource Management) applications for enterprise clients, including financial institutions and government organizations. The goal was to modernize legacy systems, streamline employee management, and improve client relationship handling through a secure and scalable web-based platform.</p>
+          <p><span className="tech"><b>Technologies</b></span>: Java, J2EE, GWT, MS SQL Server, PL/SQL, Hibernate, Apache Tomcat, JasperReports</p>
+        </div>
+      </section>
+)}
+
+   
 
       <section className="card contact">
         <h2>Contact</h2>
