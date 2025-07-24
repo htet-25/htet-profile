@@ -116,6 +116,10 @@ export default function ProfileWebsite() {
         <h3>AWS Certified Developer - Associate</h3> 
         <a href="https://www.credly.com/badges/b1e265e0-2d30-475f-b9e7-bed14b0f38af/linked_in?t=sl5kce">Verify Here</a>
       </div>
+       <div className="education">
+        <h3>Kubernetes and Cloud Native Associate(KCNA)</h3> 
+        <a href="https://www.credly.com/badges/347d6947-6d9f-4037-b9fb-f35f6ab0f5ad">Verify Here</a>
+      </div>
       </section>
       </>
       )}
@@ -151,6 +155,11 @@ export default function ProfileWebsite() {
           <p>Myanmar Information Technology developed customized CRM (Customer Relationship Management) and HRM (Human Resource Management) applications for enterprise clients, including financial institutions and government organizations. The goal was to modernize legacy systems, streamline employee management, and improve client relationship handling through a secure and scalable web-based platform.</p>
           <p><span className="tech"><b>Technologies</b></span>: Java, J2EE, GWT, MS SQL Server, PL/SQL, Hibernate, Apache Tomcat, JasperReports</p>
         </div>
+        <div className="project">
+          <h3>Node.js Real-Time Chat App</h3>
+          <p>Built a responsive, room-based chat application using Node.js, Express, and Socket.IO, with real-time messaging and user management. Deployed on Heroku, showcasing skills in asynchronous programming, REST integration, and cross-device UI design.</p>
+          <p><span className="tech"><a href="https://htet-node-v3-chat-app-506353f056a5.herokuapp.com/">Live Demo</a></span></p>
+          </div>
       </section>
 )}
 
